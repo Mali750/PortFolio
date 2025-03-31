@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light">
+    <div class="container-fluid py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 text-center">
+                <!-- Checkmark icon -->
+                <div class="mb-4">
+                    <i class="bi bi-check-circle-fill text-success fs-1"></i>
+                </div>
+
+                <!-- Thank you message -->
+                <h1 class="display-3 mb-3 text-success">Thank You!</h1>
+                <p class="lead mb-4">Your message has been successfully submitted. We'll get back to you shortly.</p>
+
+                <!-- Additional information -->
+                <div class="mb-5">
+                    <p class="text-muted">
+                        While you wait, feel free to explore more of our website or check out our latest updates.
+                    </p>
+                </div>
+
+                <!-- Back to home button -->
+                <a href="/" class="btn btn-primary btn-lg">
+                    <i class="bi bi-house-door me-2"></i>
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Access JSON data with ID
+        const submissionsData = JSON.parse(document.getElementById('submissions-json').textContent);
+        console.log('JSON Data with IDs:', submissionsData);
+        
+        // Example usage of ID in JavaScript
+        submissionsData.forEach(submission => {
+            console.log(`Submission ID: ${submission.pk}, Email: ${submission.fields.email}`);
+        });
+    </script>
+</body>
+</html>

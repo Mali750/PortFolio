@@ -1,0 +1,72 @@
+# Ignore Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+<<<<<<< HEAD
+# Python
+__pycache__/
+*.py[cod]
+
+# Django migrations (optional, see note below)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+=======
+>>>>>>> 8968462 (Updated .gitignore to ignore __pycache__ files)
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environment (your env name is myenv)
+myenv/
+
+# Ignore environment variables
+.env
+*.env
+
+# Ignore database and migration cache files
+db.sqlite3
+*.sqlite3
+migrations/
+!migrations/__init__.py  # Allow only __init__.py
+
+# Ignore static and media files (if they are generated)
+staticfiles/
+media/
+
+# Ignore logs
+*.log
+
+# Ignore IDE and editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+#extraaa..
+services/migrations/__init__.py
+services/migrations/__pycache__/__init__.cpython-39.pyc
+education/migrations/__pycache__/__init__.cpython-39.pyc
+education/__pycache__/__init__.cpython-39.pyc
+education/__pycache__/admin.cpython-39.pyc
+education/__pycache__/apps.cpython-39.pyc
+education/__pycache__/models.cpython-39.pyc
+education/__pycache__/urls.cpython-39.pyc
+education/__pycache__/views.cpython-39.pyc
+core_app/migrations/__pycache__/__init__.cpython-39.pyc
+core_app/__pycache__/views.cpython-39.pyc
+core_app/__pycache__/urls.cpython-39.pyc
+core_app/__pycache__/models.cpython-39.pyc
+core_app/__pycache__/forms.cpython-39.pyc
+core_app/__pycache__/apps.cpython-39.pyc
+core_app/__pycache__/admin.cpython-39.pyc
+core_app/__pycache__/__init__.cpython-39.pyc
+core_app/migrations/__pycache__/__init__.cpython-39.pyc
+core_app/migrations/__pycache__/0003_alter_model_login_user_name.cpython-39.pyc
+core_app/migrations/__pycache__/0002_model_login.cpython-39.pyc
+core_app/migrations/__pycache__/0001_initial.cpython-39.pyc
+MyPortFolio/__pycache__/wsgi.cpython-39.pyc
+MyPortFolio/__pycache__/urls.cpython-39.pyc
+MyPortFolio/__pycache__/settings.cpython-39.pyc
+MyPortFolio/__pycache__/__init__.cpython-39.pyc
