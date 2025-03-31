@@ -1,0 +1,31 @@
+{% extends "core_app/base.html" %}
+{% load static %}
+
+{% block profile_photo %}
+    <div class="text-center">
+        <img src="{% static 'core_app/images/AamirAziz.png' %}" alt="ProfilePicture" class="img-thumbnail" width="250px" height="150px">
+    </div>
+{% endblock profile_photo %}
+
+{% block content %}
+<div class="mt-5">
+    <div class="mt-5 text-white mx-5 text-justify">
+        <h1 class="font-weight-bold st-font">Hello,</h1>
+        <div class="px-4" style="line-height:2rem">
+            <p style="text-indent:50px">
+                I am <b class="text-warning">Aamir Aziz</b> and i have 5 years eperience in <b class="text-warning">Developement</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt accusamus minus deserunt. Vitae minus voluptatem doloribus tenetur corporis optio eveniet, labore quasi velit asperiores deleniti. Magnam aspernatur possimus mollitia sit!
+            </p>
+            <p style="text-indent:50px">
+                I am also good in <b>C Programming Language</b> i am interested in hiking and i like to ... Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, modi laboriosam earum error voluptates saepe rem! Maxime corporis nemo eum explicabo id recusandae porro, accusamus ducimus! Velit eveniet eaque autem?
+            </p>
+            <p style="text-indent:50px">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere molestiae saepe, dignissimos dolorem sed maiores fugit voluptatibus autem facilis assumenda amet porro omnis? Non nesciunt veniam fugiat quibusdam consequuntur voluptas. Aspernatur, eius! Dolorum, cum! Possimus inventore, ullam reprehenderit quas, suscipit ad doloribus rerum cum alias repellat eum nostrum necessitatibus odit fuga error illo. Quod rem reiciendis minus, a explicabo itaque. Assumenda error doloremque ea dolorem sed dicta omnis non in eum, ut aperiam debitis! Modi fuga quis praesentium dolore accusantium sed, sapiente perferendis ipsum, quod unde dolorem, deleniti quibusdam suscipit Incidunt inventore deleniti pariatur culpa quia corrupti ex neque explicabo autem possimus in illum et suscipit consequuntur itaque quas voluptas nostrum minus, nemo vel. Ratione repellendus eligendi recusandae tempore ad?
+            </p>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="{% url 'Contact'%}" class="btn btn-outline-warning my-3 mr-5">Hire Me</a>
+        <a href="{% url 'Home'%}" class="btn btn-outline-info my-3">Contact</a>
+    </div>
+</div>
+{% endblock content %}

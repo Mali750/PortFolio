@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <!--Link fontAwesome file-->
+    <link rel="stylesheet" href="{% static 'core_app/css/all.css' %}">
+    <!--Link bootstrap file-->
+    <link rel="stylesheet" href="{% static 'core_app/css/bootstrap.css' %}">
+    <!--link google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+     
+    <!--block of css-->
+    {% block corecss %}<link rel="stylesheet" href="{% static 'core_app/css/core.css' %}">{% endblock corecss %}
+
+</head>
+<body>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+
+            <div class="col-sm-2">
+                {% include "core_app/sideBar.html" %}
+            </div>
+
+            <div class="col-sm-10">
+                {% block profile_photo %}{% endblock profile_photo %}
+                {% block content %}{% endblock content %}
+            </div>
+
+        </div>
+    </div>
+    
+    <!--Link JavaScript file-->
+    <script src="{% static 'core_app/js/bootstrap.js' %}"></script>
+    <script src="{% static 'core_app/js/popper.js' %}"></script>
+    <script src="{% static 'core_app/js/JQuery.js' %}"></script>
+    <script src="{% static 'core_app/js/all.min.js' %}"></script>
+</body>
+</html>
