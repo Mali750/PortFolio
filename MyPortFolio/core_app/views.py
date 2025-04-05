@@ -53,7 +53,7 @@ def form_view(request):
     }
     return render(request, 'core_app/form_data.html', context)
 
-#saving data in database
+#saving data in database (login)
 def login_view(request):
     if request.method == 'POST':
         fm = login_form(request.POST)
