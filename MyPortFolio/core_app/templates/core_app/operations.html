@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
 
     <style>
@@ -26,136 +25,123 @@
     </style>
 
 </head>
-<body class="bg-light">
-    <div class="mt-5">
-=======
-
-</head>
-<body class="bg-light">
-    <div class="container mt-5">
->>>>>>> 8968462 (Updated .gitignore to ignore __pycache__ files)
-        <div class="card shadow">
-            <div class="card-header bg-primary text-white d-flex align-items-center position-relative">
-                <a href="{% url 'form-data' %}" class="bi bi-arrow-left position-absolute start-0 ms-3 text-white" 
-                   style="cursor: pointer; font-size: 1.5rem;"></a>
-                <h2 class="mx-auto">Submitted Contact Forms</h2>
-            </div>
+    <body class="bg-light">
+        <div class="container mt-5">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white d-flex align-items-center position-relative">
+                    <a href="{% url 'form-data' %}" class="bi bi-arrow-left position-absolute start-0 ms-3 text-white" 
+                    style="cursor: pointer; font-size: 1.5rem;"></a>
+                    <h2 class="mx-auto">Submitted Contact Forms</h2>
+                </div>
             
-            {% if obj %}
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover table-bordered">
-                        <thead class="table-primary text-center">
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Subject</th>
-                                <th scope="col" class="message-column">Message</th>
-                                <th scope="col">Submitted At</th>
-                                <th scope="col">Operation</th>
-                            </tr>
-                            <div class="row">
-                                <div class="col-sm-5 ms-auto mt-0 mb-3">
-                                    <div class="input-group flex-nowrap">
-                                        <span class="input-group-text" id="addon-wrapping"><i class="bi bi-emoji-smile"></i></span>
-<<<<<<< HEAD
-                                        <input type="text" id="search" class="form-control" placeholder="Search Name">
-                                    </div>
-                                    <ul id="suggestion-box" class="list-group position-absolute w-100"></ul> 
-                                </div>
-                            </div>
-                                             
-=======
-                                        <input type="text" class="form-control" placeholder="Search Name" aria-label="Username" aria-describedby="addon-wrapping">
+                {% if obj %}
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead class="table-primary text-center">
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Subject</th>
+                                    <th scope="col" class="message-column">Message</th>
+                                    <th scope="col">Submitted At</th>
+                                    <th scope="col">Operation</th>
+                                </tr>
+                                <div class="row">
+                                    <div class="col-sm-5 ms-auto mt-0 mb-3">
+                                        <div class="input-group flex-nowrap">
+                                            <span class="input-group-text" id="addon-wrapping"><i class="bi bi-emoji-smile"></i></span>
+                                            <input type="text" id="search" class="form-control" placeholder="Search Name">
+                                        </div>
+                                        <ul id="suggestion-box" class="list-group position-absolute w-100"></ul> 
                                     </div>
                                 </div>
-                            </div>                            
->>>>>>> 8968462 (Updated .gitignore to ignore __pycache__ files)
-                        </thead>
-                        <tbody>
-                            {% for objc in obj %}
-                            <tr>
-                                <td>{{ objc.id }}</td>
-                                <td>{{ objc.name }}</td>
-                                <td>{{ objc.email }}</td>
-                                <td>{{ objc.subject }}</td>
-                                <td class="message-column">{{ objc.message }}</td>
-                                <td>{{ objc.submitted_at|date:"M d, Y H:i" }}</td>
-                                <td class="text-center">
-                                    <form action="{% url 'delete' objc.pk %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="submit" class="btn btn-danger btn-sm" value="Delete">
-                                    </form>
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </tbody>
-                    </table>
+                                            <input type="text" class="form-control" placeholder="Search Name" aria-label="Username" aria-describedby="addon-wrapping">
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </thead>
+                            <tbody>
+                                {% for objc in obj %}
+                                <tr>
+                                    <td>{{ objc.id }}</td>
+                                    <td>{{ objc.name }}</td>
+                                    <td>{{ objc.email }}</td>
+                                    <td>{{ objc.subject }}</td>
+                                    <td class="message-column">{{ objc.message }}</td>
+                                    <td>{{ objc.submitted_at|date:"M d, Y H:i" }}</td>
+                                    <td class="text-center">
+                                        <form action="{% url 'delete' objc.pk %}" method="POST">
+                                            {% csrf_token %}
+                                            <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
+                {% else %}
+                    <div class="card-body text-center">
+                        <h3 class="text-danger">No Record Found</h3>
+                    </div>
+                {% endif %}
             </div>
-            {% else %}
-                <div class="card-body text-center">
-                    <h3 class="text-danger">No Record Found</h3>
-                </div>
-            {% endif %}
         </div>
-    </div>
 
-    <script src="{% static 'core_app/js/bootstrap.js' %}"></script>
-    <script src="{% static 'core_app/js/popper.js' %}"></script>
-    <script src="{% static 'core_app/js/JQuery.js' %}"></script>
-    <script src="{% static 'core_app/js/all.min.js' %}"></script>
-<<<<<<< HEAD
-    <script>
-    /* for searching */
-    document.getElementById("search").addEventListener("keyup", function() {
-        let value = this.value.toLowerCase();
-        document.querySelectorAll("tbody tr").forEach(row => {
-            row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
-        });
-    });
-
-    /* for auto suggestions */
-    let searchInput = document.getElementById("search");
-    let suggestionBox = document.getElementById("suggestion-box");
-
-    // Collect all names from the table for suggestions
-    let names = [];
-    document.querySelectorAll("tbody tr").forEach(row => {
-        let nameCell = row.querySelector("td:nth-child(2)"); // 2nd column (Name)
-        if (nameCell) names.push(nameCell.innerText);
-    });
-
-    searchInput.addEventListener("keyup", function () {
-        let query = this.value.toLowerCase();
-        suggestionBox.innerHTML = "";
-
-        if (query) {
-            let suggestions = names.filter(name => name.toLowerCase().includes(query));
-
-            suggestions.forEach(suggestedName => {
-                let listItem = document.createElement("li");
-                listItem.classList.add("list-group-item", "list-group-item-action");
-                listItem.textContent = suggestedName;
-                listItem.addEventListener("click", function () {
-                    searchInput.value = suggestedName;
-                    suggestionBox.innerHTML = "";
-                });
-                suggestionBox.appendChild(listItem);
+        <script src="{% static 'core_app/js/bootstrap.js' %}"></script>
+        <script src="{% static 'core_app/js/popper.js' %}"></script>
+        <script src="{% static 'core_app/js/JQuery.js' %}"></script>
+        <script src="{% static 'core_app/js/all.min.js' %}"></script>
+        <script>
+        /* for searching */
+        document.getElementById("search").addEventListener("keyup", function() {
+            let value = this.value.toLowerCase();
+            document.querySelectorAll("tbody tr").forEach(row => {
+                row.style.display = row.innerText.toLowerCase().includes(value) ? "" : "none";
             });
-        }
-    });
+        });
 
-    // Hide suggestions when clicking outside
-    document.addEventListener("click", function (e) {
-        if (!searchInput.contains(e.target) && !suggestionBox.contains(e.target)) {
-            suggestionBox.innerHTML = "Kuch bhi nahi hai babu";
-        }
-    });
-</script>
+        /* for auto suggestions */
+        let searchInput = document.getElementById("search");
+        let suggestionBox = document.getElementById("suggestion-box");
 
-=======
->>>>>>> 8968462 (Updated .gitignore to ignore __pycache__ files)
-</body>
-</html>
+        // Collect all names from the table for suggestions
+        let names = [];
+        document.querySelectorAll("tbody tr").forEach(row => {
+            let nameCell = row.querySelector("td:nth-child(2)"); // 2nd column (Name)
+            if (nameCell) names.push(nameCell.innerText);
+        });
+
+        searchInput.addEventListener("keyup", function () {
+            let query = this.value.toLowerCase();
+            suggestionBox.innerHTML = "";
+
+            if (query) {
+                let suggestions = names.filter(name => name.toLowerCase().includes(query));
+
+                suggestions.forEach(suggestedName => {
+                    let listItem = document.createElement("li");
+                    listItem.classList.add("list-group-item", "list-group-item-action");
+                    listItem.textContent = suggestedName;
+                    listItem.addEventListener("click", function () {
+                        searchInput.value = suggestedName;
+                        suggestionBox.innerHTML = "";
+                    });
+                    suggestionBox.appendChild(listItem);
+                });
+            }
+        });
+
+        // Hide suggestions when clicking outside
+        document.addEventListener("click", function (e) {
+            if (!searchInput.contains(e.target) && !suggestionBox.contains(e.target)) {
+                suggestionBox.innerHTML = "Kuch bhi nahi hai babu";
+            }
+        });
+    </script>
+
+    </body>
+    </html>
